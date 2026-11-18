@@ -1,9 +1,3 @@
-"""Reusable RAG engine for Jwalitha's profile chatbot.
-
-Generated from the code cells in Jwalitha_Chatbot_RAG_Clean.ipynb.
-No Colab-specific code, test calls, or secrets.
-"""
-
 import os
 from pathlib import Path
 
