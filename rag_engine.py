@@ -42,7 +42,6 @@ def build_vector_database(chunks, model_name="all-MiniLM-L6-v2"):
         raise ValueError("Cannot build an index without chunks.")
     embedding_model = SentenceTransformer(model_name)
     embeddings = embedding_model.encode(chunks, convert_to_numpy=True)
-    embeddings = np.asarray(embeddings, dtype="float32")
     faiss.normalize_L2(embeddings)
     index = faiss.IndexFlatIP(embeddings.shape[1])
     index.add(embeddings)
