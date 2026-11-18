@@ -97,20 +97,7 @@ if question:
 
 # 6. SIDEBAR
 
-with st.sidebar:
-    st.header("About this chatbot")
 
-    st.write(
-        "An AI assistant powered by Jwalitha's "
-        "professional profile using RAG."
-    )
-
-    st.subheader("Technology Used")
-    st.write(
-        "Python · Streamlit · Sentence Transformers "
-        "· FAISS · Groq"
-    )
-
-    if st.button("Clear Chat"):
-        st.session_state.messages = []
-        st.rerun()
+if st.button("Clear Chat"):
+    st.session_state.messages = []
+    st.rerun()
