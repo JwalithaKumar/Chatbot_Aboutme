@@ -1,7 +1,5 @@
 
-import os
 import streamlit as st
-
 from rag_engine import load_knowledge_base, ask_rag
 
 
