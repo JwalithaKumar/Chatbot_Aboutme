@@ -43,11 +43,11 @@ except Exception as e:
 
 #api_key = os.getenv("GROQ_API_KEY")
 
-if not api_key:
-    try:
-        api_key = st.secrets["GROQ_API_KEY"]
-    except Exception:
-        api_key = None
+
+try:
+    api_key = st.secrets["GROQ_API_KEY"]
+except Exception:
+    api_key = None
 
 if not api_key:
     st.error("Please configure GROQ_API_KEY in Streamlit Secrets.")
