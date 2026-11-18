@@ -55,7 +55,6 @@ def load_knowledge_base(pdf_path="Jwalithapro.pdf"):
     embedding_model, index = build_vector_database(chunks)
     return embedding_model, chunks, index
 
-
 def retrieve_context(question, embedding_model, chunks, index, top_k=3):
     """Return retrieved text for the user question."""
     if not question.strip():
