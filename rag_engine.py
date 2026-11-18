@@ -74,7 +74,7 @@ def retrieve_context(question, embedding_model, chunks, index, top_k=3):
 def ask_rag(question, embedding_model, chunks, index, api_key=None,
             top_k=3, model_name="openai/gpt-oss-120b"):
     """Retrieve PDF context and generate an answer with Groq."""
-    key = api_key or os.getenv("GROQ_API_KEY")
+    key = api_key
     if not key:
         raise ValueError("GROQ_API_KEY is missing. Configure it securely.")
     context = retrieve_context(question, embedding_model, chunks, index, top_k)
