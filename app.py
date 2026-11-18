@@ -41,7 +41,7 @@ except Exception as e:
 
 # 3. GROQ API KEY
 
-api_key = os.getenv("GROQ_API_KEY")
+#api_key = os.getenv("GROQ_API_KEY")
 
 if not api_key:
     try:
