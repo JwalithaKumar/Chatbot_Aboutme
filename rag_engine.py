@@ -1,6 +1,4 @@
-import os
 from pathlib import Path
-
 import faiss
 import numpy as np
 from groq import Groq
