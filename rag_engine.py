@@ -63,13 +63,13 @@ def retrieve_context(question, embedding_model, chunks, index, top_k=3):
     if top_k < 1:
         raise ValueError("top_k must be at least 1.")
     query_embedding = embedding_model.encode([question], convert_to_numpy=True)
-    query_embedding = np.asarray(query_embedding, dtype="float32")
     faiss.normalize_L2(query_embedding)
     distances, indices = index.search(query_embedding, min(top_k, len(chunks)))
-    return "\n\n".join(
-        f"[Chunk {idx + 1}]\n{chunks[idx]}"
-        for idx in indices[0] if idx != -1
-    )
+    context = ""
+    for idx in indices[0]:
+        if idx != -1:
+            context += chunks[idx] + "\n\n"
+    return context
 
 
 def ask_rag(question, embedding_model, chunks, index, api_key=None,
